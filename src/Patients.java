@@ -1,33 +1,35 @@
+import java.util.ArrayList;
+
 /**
  * Patients - records several patients
  * Created by Jason on 22/03/2015.
  */
 public class Patients {
-    Patient[] records;
-    int current;
+    private ArrayList<Patient> records;
 
-    public Patients(int maxSize) {
-        records = new Patient[maxSize];
+    public Patients() {
+        records = new ArrayList<Patient>();
     }
 
     public int count() {
-        return current;
+        return records.size();
     }
 
     public void add(Patient patient) {
-        records[current++] = patient;
+        records.add(patient);
     }
 
     public Patient get(int i) {
-        return records[i];
+        return records.get(i);
     }
 
+    @Deprecated
     public boolean isFull() {
-        return current == records.length;
+        return false;
     }
 
     public boolean isEmpty() {
-        return current == 0;
+        return records.isEmpty();
     }
 }
 
